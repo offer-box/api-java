@@ -1,0 +1,33 @@
+<server description="new server">
+
+	<!-- Enable features -->
+	<featureManager>
+		<feature>javaee-7.0</feature>
+		<feature>localConnector-1.0</feature>
+	</featureManager>
+
+	<basicRegistry id="basic" realm="BasicRealm">
+		<!-- <user name="yourUserName" password="" /> -->
+	</basicRegistry>
+
+	<!-- To access this server from a remote client add a host attribute to 
+		the following element, e.g. host="*" -->
+	<httpEndpoint host="*" httpPort="9080" httpsPort="9443" id="defaultHttpEndpoint"/>
+
+	<!-- import the IdP certificate into the keystore at <liberty_root>/usr/servers/<server_name>/resources/security/key.jks -->
+	<keyStore id="defaultKeyStore" password="{xor}KD4sPjsyNjE="/>
+	<keyStore id="trustStore" password="{xor}KD4sPjsyNjE="/>
+	<!-- Automatically expand WAR files and EAR files -->
+	<applicationManager autoExpand="true"/>
+
+
+	<applicationMonitor updateTrigger="mbean"/>
+
+	<keyStore id="defaultKeyStore" password="{xor}KD4sPjsyNjE="/>
+
+	<basicRegistry id="basic" realm="BasicRealm">
+		<user name="wasadmin" password="{xor}KD4sPjsyNjE="/>
+	</basicRegistry>
+
+    <webApplication contextRoot="JavaHelloWorldApp" id="offer-box" location="JavaHelloWorldApp.war" name="offer-box"/>
+</server>
