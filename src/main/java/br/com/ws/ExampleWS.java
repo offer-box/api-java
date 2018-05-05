@@ -17,6 +17,15 @@ public class ExampleWS {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/list-tags")
+	public Response getTags() {
+		String[] tags = {"madeira", "metal", "estofado", "acento", "rodas", "apoio", "tela", "gabinete", "teclado", "monitor", "internet", "fonte", "CPU", "som"};
+		return Response.status(200).entity(tags).build();
+	}
+	
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/list-offer")
 	public Response getListOffer() {
 		
