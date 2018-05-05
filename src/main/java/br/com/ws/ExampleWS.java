@@ -20,6 +20,7 @@ import br.com.model.OfferProduct;
 public class ExampleWS {
 
 	// http://offer-box.mybluemix.net/api/offer-box/list-tags
+	// http://offer-box.mybluemix.net/api/offer-box/match-tags
 	// http://offer-box.mybluemix.net/api/offer-box/list-offer
 	// http://offer-box.mybluemix.net/api/offer-box/list-bidding
 	// http://offer-box.mybluemix.net/api/offer-box/info-offer
@@ -34,7 +35,7 @@ public class ExampleWS {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/list-tags")
+	@Path("/match-tags")
 	public Response matchTags(@QueryParam("textTag") String textTag) {
 
 		Client client = ClientBuilder.newClient();
