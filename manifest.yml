@@ -3,7 +3,7 @@
   memory: 512M
   host: offer-box
   domain: mybluemix.net
-  path: defaultServer
+  path: target/offer-box.war
 # applications:
 # - name: sample-java-helloworld
 #   random-route: true
