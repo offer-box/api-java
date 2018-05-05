@@ -29,5 +29,5 @@
 		<user name="wasadmin" password="{xor}KD4sPjsyNjE="/>
 	</basicRegistry>
 
-    <webApplication contextRoot="JavaHelloWorldApp" id="offer-box" location="JavaHelloWorldApp.war" name="offer-box"/>
+    <webApplication contextRoot="offer-box" id="offer-box" location="offer-box.war" name="offer-box"/>
 </server>
