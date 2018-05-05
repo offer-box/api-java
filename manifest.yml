@@ -8,7 +8,7 @@
 # - name: sample-java-helloworld
 #   random-route: true
 #   memory: 256M
-#   path: target/JavaHelloWorldApp.war
+#   path: target/offer-box.war
 
 
 

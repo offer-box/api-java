@@ -10,7 +10,7 @@ This project can be built with [Apache Maven](http://maven.apache.org/). The pro
 
 Use the following steps to run the application locally:
 
-1. Execute full Maven build to create the `target/JavaHelloWorldApp.war` file:
+1. Execute full Maven build to create the `target/offer-box.war` file:
     ```bash
     $ mvn clean install
     ```
@@ -20,11 +20,11 @@ Use the following steps to run the application locally:
     $ mvn liberty:run-server
     ```
 
-    Once the server is running, the application will be available under [http://localhost:9080/JavaHelloWorldApp](http://localhost:9080/JavaHelloWorldApp).
+    Once the server is running, the application will be available under [http://localhost:9080/offer-box](http://localhost:9080/offer-box).
 
 Use the following command to run the built application in Bluemix:
     ```bash
-    $ cf push <appname> -p target/JavaHelloWorldApp.war
+    $ cf push <appname> -p target/offer-box.war
     ```
 ## Developing and Deploying using Eclipse
 
@@ -43,9 +43,9 @@ IBM® Eclipse Tools for Bluemix® provides plug-ins that can be installed into a
   - Continue the wizard with default options to Finish
 
 4. Run your application locally on Liberty:
-  - Right click on the `JavaHelloWorldApp` sample and select `Run As` -> `Run on Server` option
+  - Right click on the `offer-box` sample and select `Run As` -> `Run on Server` option
   - Find and select the localhost Liberty server and press `Finish`
-  - In a few seconds, your application should be running at http://localhost:9080/JavaHelloWorldApp/
+  - In a few seconds, your application should be running at http://localhost:9080/offer-box/
 
 5. Create a Bluemix server definition:
   - In the `Servers` view, right-click -> `New` -> `Server`
@@ -54,7 +54,7 @@ IBM® Eclipse Tools for Bluemix® provides plug-ins that can be installed into a
   - Select your `org` and `space` and click `Finish`
 
 6. Run your application on Bluemix:
-  - Right click on the `JavaHelloWorldApp` sample and select `Run As` -> `Run on Server` option
+  - Right click on the `offer-box` sample and select `Run As` -> `Run on Server` option
   - Find and select the `IBM Bluemix` and press `Finish`
   - A wizard will guide you with the deployment options. Be sure to choose a unique `Name` for your application
   - In a few minutes, your application should be running at the URL you chose.
