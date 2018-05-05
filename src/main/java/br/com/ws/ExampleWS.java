@@ -6,6 +6,10 @@ import java.util.List;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -15,12 +19,31 @@ import br.com.model.OfferProduct;
 @Path("/offer-box") 
 public class ExampleWS {
 
+	// http://offer-box.mybluemix.net/api/offer-box/list-tags
+	// http://offer-box.mybluemix.net/api/offer-box/list-offer
+	// http://offer-box.mybluemix.net/api/offer-box/list-bidding
+	// http://offer-box.mybluemix.net/api/offer-box/info-offer
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/list-tags")
 	public Response getTags() {
 		String[] tags = {"madeira", "metal", "estofado", "acento", "rodas", "apoio", "tela", "gabinete", "teclado", "monitor", "internet", "fonte", "CPU", "som"};
 		return Response.status(200).entity(tags).build();
+	}
+	
+	@GET
+	@Produces(MediaType.APPLICATION_JSON)
+	@Path("/list-tags")
+	public Response matchTags(@QueryParam("textTag") String textTag) {
+
+		Client client = ClientBuilder.newClient();
+		
+		WebTarget target = client.target("https://example-node-red-catossi.mybluemix.net/tag?text=" + textTag);
+			
+		return target.request(MediaType.APPLICATION_JSON)
+				.header("Content-type", "application/json")
+				.get();
 	}
 	
 	
