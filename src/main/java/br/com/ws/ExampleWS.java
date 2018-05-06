@@ -55,9 +55,9 @@ public class ExampleWS {
 		
 		List<OfferProduct> offerProducts = new ArrayList<OfferProduct>();
 
-        offerProducts.add(new OfferProduct(1.2, 1, 1, "2km", 5, "SMALL" ));
-        offerProducts.add(new OfferProduct(1.2, 1, 1, "2km", 5, "SMALL" ));
-        offerProducts.add(new OfferProduct(1.2, 1, 1, "2km", 5, "SMALL" ));
+        offerProducts.add(new OfferProduct(1.2, 1, "Empresa X", 1, "Product Y", "2km", 5, "SMALL" ));
+        offerProducts.add(new OfferProduct(1.2, 1, "Empresa X1", 1, "Product Y2", "5km", 5, "SMALL" ));
+        offerProducts.add(new OfferProduct(1.2, 1, "Empresa X2", 1, "Product Y3", "10km", 5, "SMALL" ));
 
 		return Response.status(200).entity(offerProducts).build();
 	}
@@ -79,9 +79,7 @@ public class ExampleWS {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/info-offer")
 	public Response get() {
-		
-		OfferProduct offerProduct = new OfferProduct(1.2, 1, 1, "2km", 5, "SMALL" );
-
+		OfferProduct offerProduct = new OfferProduct(1.2, 1, "Empresa X2", 1, "Product Y3", "10km", 5, "SMALL" );
 		return Response.status(200).entity(offerProduct).build();
 	}
 }
